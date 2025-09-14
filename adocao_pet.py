@@ -7,74 +7,65 @@
 # Paramêtro de adoção = classe apenas para ligar o animal ao adotante. Vamos ter o histórico armazenado aqui tbm
 
 
-class Animais:
-    def __init__(self, id, nome, especie, sexo, idade, raca, disponibilidade):
-        self.__id = id
-        self.nome = nome
-        self.__especie = especie
-        self.__sexo = sexo
-        self.__idade = idade
-        self.__raca = raca
-        self.__disponibilidade = disponibilidade
-    
-    @property
-    def mostrar_id (self):
-        return self.__id
-    @property
-    def mostrar_especie (self):
-        return self.__especie
-    
-    @property
-    def mostrar_sexo (self):
-        return self.__sexo
-    
-    @property
-    def mostrar_idade (self):
-        return self.__idade
-    
-    @property
-    def mostrar_raca (self):
-        return self.__raca
-    
-    @property
-    def mostrar_disponibilidade (self):
-        return self.__disponibilidade
-    
-    def cadastrar_Animal (self, animal): # Função para cadastrarAnimal
-        if animal not in list_animais:
-            for animal in list_animais:
-                id = input("Digite o id do animal: ")
-                nome = input("Digite o nome do animal: ")
-                especie = input("Digite a especie do animal: ")
-                sexo = input("Digite o sexo do animal: ")
-                idade = input("Digite a idade do animal: ")
-                raca = input("Digite a raca do animal: ")
-                disponibilidade = input("Digite a disponibilidade do animal: ")
-                animal = Animais (id, nome, especie, sexo, idade, raca, disponibilidade)
-            
-            list_animais.append(animal)
-            return True
-        else:
-            return "Animal já cadastrado."
-        
-    
-    def editar_Animal (self, animal): # Função para editar_Animal
-        if animal in list_animais:
-            for animal in list_animais:
-                id = input("Digite o id do animal: ")
-                nome = input("Digite o nome do animal: ")
-                especie = input("Digite a especie do animal: ")
-                sexo = input("Digite o sexo do animal: ")
-                idade = input("Digite a idade do animal: ")
-                raca = input("Digite a raca do animal: ")
-                disponibilidade = input("Digite a disponibilidade do animal: ")
-                animal = Animais (id, nome, especie, sexo, idade, raca, disponibilidade)
-            
-            list_animais.append(animal)
-            return True
-        else:
-            return "Animal nao cadastrado."
+class SistemaAdocao:
+    def __init__(self):
+        self.list_animais = []
 
+    def cadastrar_Animal(self, id, nome, especie, sexo, idade, raca, disponibilidade):
+        for pet in self.list_animais:
+            if pet.id == id:
+                return "Animal já cadastrado."
+
+        animal = Animal(id, nome, especie, sexo, idade, raca, disponibilidade)
+        self.list_animais.append(animal)
+        return "Animal cadastrado com sucesso."
+
+    def pesquisar_Animal(self, id_animal):
+        for animal in self.list_animais:
+            if animal.id == id_animal:
+                return animal
+        return None
+
+    def editar_Animal(self, id_animal):
+        for animal in self.list_animais:
+            if animal.id == id_animal:
+                animal.nome = input("Digite o novo nome do animal: ")
+                animal.especie = input("Digite a nova espécie do animal: ")
+                animal.sexo = input("Digite o novo sexo do animal: ")
+                animal.idade = input("Digite a nova idade do animal: ")
+                animal.raca = input("Digite a nova raça do animal: ")
+                animal.disponibilidade = input("Digite a disponibilidade do animal: ")
+                return "Animal atualizado com sucesso."
+            
+            else:
+                return "Animal nao encontrado."
+
+    def listar_Animais(self):
+        if not self.list_animais:
+            return "Nenhum animal cadastrado."
+        
+        resultado = "\n---------------- Animais cadastrados ----------------\n"
+
+        for animal in self.list_animais:
+            resultado += f"ID: {animal.id}\n"
+            resultado += f"Nome: {animal.nome}\n"
+            resultado += f"Espécie: {animal.especie}\n"
+            resultado += f"Sexo: {animal.sexo}\n"
+            resultado += f"Idade: {animal.idade}\n"
+            resultado += f"Raça: {animal.raca}\n"
+            resultado += f"Disponibilidade: {animal.disponibilidade}\n"
+            resultado += "-" * 40 + "\n"
+        return resultado
+    
+class Animal:
+    def __init__(self, id, nome, especie, sexo, idade, raca, disponibilidade):
+        self.id = id
+        self.nome = nome
+        self.especie = especie
+        self.sexo = sexo
+        self.idade = idade
+        self.raca = raca
+        self.disponibilidade = disponibilidade
 class Adotante:
     def __init__(self, nome, idade, rg, cpf, comprovante):
         self.__nome = nome
@@ -93,3 +84,13 @@ class Adotante:
 
 # class Adocao:
     
+sistema = SistemaAdocao()
+sistema.cadastrar_Animal(1, "Luna", "Cachorro", "Fêmea", "2 anos", "Labrador", "Sim")
+sistema.cadastrar_Animal(2, "Rex", "Cachorro", "Macho", "3 anos", "Vira-lata", "Sim")
+sistema.cadastrar_Animal(3, "Toby", "Gato", "Macho", "1 ano", "Siames", "Sim")
+
+print(sistema.listar_Animais())
+
+print(sistema.editar_Animal(2))
+
+print(sistema.listar_Animais())
