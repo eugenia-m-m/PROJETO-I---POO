@@ -56,8 +56,25 @@ class Animais:
             return True
         else:
             return "Animal já cadastrado."
-
+        
     
+    def editar_Animal (self, animal): # Função para editar_Animal
+        if animal in list_animais:
+            for animal in list_animais:
+                id = input("Digite o id do animal: ")
+                nome = input("Digite o nome do animal: ")
+                especie = input("Digite a especie do animal: ")
+                sexo = input("Digite o sexo do animal: ")
+                idade = input("Digite a idade do animal: ")
+                raca = input("Digite a raca do animal: ")
+                disponibilidade = input("Digite a disponibilidade do animal: ")
+                animal = Animais (id, nome, especie, sexo, idade, raca, disponibilidade)
+            
+            list_animais.append(animal)
+            return True
+        else:
+            return "Animal nao cadastrado."
+
 class Adotante:
     def __init__(self, nome, idade, rg, cpf, comprovante):
         self.__nome = nome
