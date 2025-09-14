@@ -74,5 +74,5 @@ class Adotante:
     def mostrar_idade (self):
         return self.__idade
 
-class Adocao:
+# class Adocao:
     
