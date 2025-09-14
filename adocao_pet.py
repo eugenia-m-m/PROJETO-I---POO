@@ -57,6 +57,14 @@ class SistemaAdocao:
             resultado += "-" * 40 + "\n"
         return resultado
     
+    def remover_Animal(self, id_animal): 
+        animal = int(input("Digite o ID do animal que deseja remover: "))
+        for animais in self.list_animais:
+            if animal == id_animal:
+                self.list_animais.remove(animais)
+            return "Animal removido com sucesso."
+        return "Animal nao encontrado."
+    
 class Animal:
     def __init__(self, id, nome, especie, sexo, idade, raca, disponibilidade):
         self.id = id
@@ -88,9 +96,18 @@ sistema = SistemaAdocao()
 sistema.cadastrar_Animal(1, "Luna", "Cachorro", "Fêmea", "2 anos", "Labrador", "Sim")
 sistema.cadastrar_Animal(2, "Rex", "Cachorro", "Macho", "3 anos", "Vira-lata", "Sim")
 sistema.cadastrar_Animal(3, "Toby", "Gato", "Macho", "1 ano", "Siames", "Sim")
+sistema.cadastrar_Animal(4, "Charlie", "Gato", "Macho", "2 anos", "Persa", "Sim")
+
+print(sistema.listar_Animais())
+
+print(sistema.pesquisar_Animal(2))
 
 print(sistema.listar_Animais())
 
 print(sistema.editar_Animal(2))
+
+print(sistema.listar_Animais())
+
+print(sistema.remover_Animal(2))
 
 print(sistema.listar_Animais())
