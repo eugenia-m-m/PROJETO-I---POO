@@ -74,6 +74,8 @@ class Animal:
         self.idade = idade
         self.raca = raca
         self.disponibilidade = disponibilidade
+
+
 class Adotante:
     def __init__(self, nome, idade, rg, cpf, comprovante):
         self.__nome = nome
@@ -100,7 +102,6 @@ class Adotante:
         id_adotante = novo_id 
         print(f'Esse é o novo ID {id_adotante}')
 
-# class Adocao:
     
 sistema = SistemaAdocao()
 sistema.cadastrar_Animal(1, "Luna", "Cachorro", "Fêmea", "2 anos", "Labrador", "Sim")
@@ -114,7 +115,7 @@ print(sistema.pesquisar_Animal(2))
 
 print(sistema.listar_Animais())
 
-print(sistema.editar_Animal(2))
+print(sistema.editar_Animal(2)) 
 
 print(sistema.listar_Animais())
 
