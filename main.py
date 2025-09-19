@@ -5,16 +5,22 @@ from animal import Animal
 def menu():
     while True:
         print(""" 
-        MENU
+        ------------- MENU -------------
             
-            1- CADASTRAR
-            2- LISTAR
-            3- SAIR
+            1 - CADASTRAR ANIMAL 📃
+            2 - CADASTRAR ADOTANTE 📃
+            3 - LISTAR ANIMAIS 🐶🐱🐦
+            4 - PESQUISAR ANIMAL 🔍
+            5 - EDITAR ANIMAL ✏️
+            6 - REMOVER ANIMAL 🗑️
+            7 - EDITAR ADOTANTE ✏️
+            0 - SAIR ❌
     """)
         op = input()
         if op == '1':
             print('Cadastrar')
             break 
+    
 
         elif op == '2':
             print('Listar')
@@ -31,3 +37,4 @@ def menu():
 
 if __name__ == "__main__":
     menu()
+    
