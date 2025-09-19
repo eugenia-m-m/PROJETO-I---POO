@@ -18,15 +18,34 @@ def menu():
     """)
         op = input()
         if op == '1':
-            print('Cadastrar')
+            print('Cadastrando animal...')
             break 
     
-
         elif op == '2':
-            print('Listar')
+            print('Cadastrando adotante...')
             break 
 
         elif op == '3':
+            print('Listando animais...')
+            break 
+
+        elif op == '4':
+            print('Pesquisando animais...')
+            break
+
+        elif op == '5':
+            print('Editando animais...')
+            break
+
+        elif op == '6':
+            print('Removendo animai')
+            break
+
+        elif op == '7':
+            print('Editando adotante...')
+            break
+
+        elif op == '0':
             print('Sair')
             break
 
