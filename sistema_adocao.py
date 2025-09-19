@@ -1,12 +1,3 @@
-# Criar classes bases para: animais (cachorro, gato, aves), adotante, adoção (provavelmente vamos utilizar composição)
-# As informações serão armazenadas em JSON
-# Vamos ter funções para pesquisar e adicionar animais
-
-# Paramêtros de animais = nome, espécie, sexo, idade, raça, tipo de comida q come
-# Paramêtros de adotante = nome, idade (+18), rg, cpf, comprovante de residencia
-# Paramêtro de adoção = classe apenas para ligar o animal ao adotante. Vamos ter o histórico armazenado aqui tbm
-
-
 class SistemaAdocao:
     def __init__(self):
         self.list_animais = []
@@ -24,7 +15,7 @@ class SistemaAdocao:
         for animal in self.list_animais:
             if animal.id == id_animal:
                 return animal
-        return None
+        return "Animal não encontrado."
 
     def editar_Animal(self, id_animal):
         for animal in self.list_animais:
