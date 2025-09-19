@@ -1,6 +1,7 @@
 from sistema_adocao import SistemaAdocao
 from animal import Animal 
 
+
 def menu():
     while True:
         print(""" 
