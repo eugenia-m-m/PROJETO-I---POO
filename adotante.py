@@ -15,6 +15,12 @@ class Adotante:
         return self.__idade
     
     @classmethod
+    def cadastrar_adotante (cls, novo_id):
+        if novo_id in Adotante.cadastro_adotante:
+            print('Este ID já está sendo utilizado. Tente outro.')
+            return
+    
+    @classmethod
     def editar_adotante (cls, novo_id):
         if novo_id in Adotante.cadastro_adotante:
             print('Este é o mesmo ID utilizado. Tente outro.')
