@@ -114,6 +114,6 @@ print(sistema.editar_Animal(2))
 
 print(sistema.listar_Animais())
 
-print(sistema.remover_Animal(2))
+print(sistema.remover_Animal())
 
 print(sistema.listar_Animais())
