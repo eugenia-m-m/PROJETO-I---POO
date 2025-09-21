@@ -1,24 +1,26 @@
 class SistemaAdocao:
-    def __init__(self):
-        self.list_animais = []
+    list_animais = []
 
-    def cadastrar_Animal(self, id, nome, especie, sexo, idade, raca, disponibilidade):
-        for pet in self.list_animais:
+    @classmethod
+    def cadastrar_Animal(cls, id, nome, especie, sexo, idade, raca, disponibilidade):
+        for pet in cls.list_animais:
             if pet.id == id:
                 return "Animal já cadastrado."
 
         animal = Animal(id, nome, especie, sexo, idade, raca, disponibilidade)
-        self.list_animais.append(animal)
+        cls.list_animais.append(animal)
         return "Animal cadastrado com sucesso."
 
-    def pesquisar_Animal(self, id_animal):
-        for animal in self.list_animais:
+    @classmethod
+    def pesquisar_Animal(cls, id_animal):
+        for animal in cls.list_animais:
             if animal.id == id_animal:
                 return animal
         return "Animal não encontrado."
 
-    def editar_Animal(self, id_animal):
-        for animal in self.list_animais:
+    @classmethod
+    def editar_Animal(cls, id_animal):
+        for animal in cls.list_animais:
             if animal.id == id_animal:
                 animal.nome = input("Digite o novo nome do animal: ")
                 animal.especie = input("Digite a nova espécie do animal: ")
@@ -31,13 +33,14 @@ class SistemaAdocao:
             else:
                 return "Animal nao encontrado."
 
-    def listar_Animais(self):
-        if not self.list_animais:
+    @classmethod
+    def listar_Animais(cls):
+        if not cls.list_animais:
             return "Nenhum animal cadastrado."
         
         resultado = "\n---------------- Animais cadastrados ----------------\n"
 
-        for animal in self.list_animais:
+        for animal in cls.list_animais:
             resultado += f"ID: {animal.id}\n"
             resultado += f"Nome: {animal.nome}\n"
             resultado += f"Espécie: {animal.especie}\n"
@@ -48,11 +51,12 @@ class SistemaAdocao:
             resultado += "-" * 40 + "\n"
         return resultado
     
-    def remover_Animal(self, id_animal): 
+    @classmethod
+    def remover_Animal(cls, id_animal): 
         animal = int(input("Digite o ID do animal que deseja remover: "))
-        for animais in self.list_animais:
+        for animais in cls.list_animais:
             if animal == id_animal:
-                self.list_animais.remove(animais)
+                cls.list_animais.remove(animais)
             return "Animal removido com sucesso."
         return "Animal nao encontrado."
     
