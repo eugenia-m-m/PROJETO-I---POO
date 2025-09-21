@@ -20,30 +20,37 @@ def menu():
     """)
         op = input()
         if op == '1':
+            SistemaAdocao.cadastrar_Animal() # Precisa passar os parâmetros
             print('Cadastrando animal...')
             break 
     
         elif op == '2':
+            Adotante.cadastrar_adotante() # Precisa passar os parâmetros 
             print('Cadastrando adotante...')
             break 
 
         elif op == '3':
+            print(SistemaAdocao.listar_animais())
             print('Listando animais...')
             break 
 
         elif op == '4':
+            SistemaAdocao.pesquisar_Animal() # Precisa passar o ID do animal 
             print('Pesquisando animais...')
             break
 
         elif op == '5':
+            SistemaAdocao.editar_Animal() # Precisa passar o ID novo do animal
             print('Editando animais...')
             break
 
         elif op == '6':
+            SistemaAdocao.remover_Animal() # Precisa passar o ID do animal
             print('Removendo animai')
             break
 
         elif op == '7':
+            Adotante.editar_adotante() # Precisa passar o ID do adotante
             print('Editando adotante...')
             break
 
