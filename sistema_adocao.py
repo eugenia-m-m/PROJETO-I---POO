@@ -50,7 +50,7 @@ class SistemaAdocao:
     
     def remover_Animal(self, id_animal): 
         animal = int(input("Digite o ID do animal que deseja remover: "))
-        for animais in self.list_animais:
+        for animais in self.list_animais[1:]:
             if animal == id_animal:
                 self.list_animais.remove(animais)
             return "Animal removido com sucesso."
@@ -110,6 +110,6 @@ print(sistema.editar_Animal(2))
 
 print(sistema.listar_Animais())
 
-print(sistema.remover_Animal(2))
+print(sistema.remover_Animal())
 
 print(sistema.listar_Animais())
