@@ -60,42 +60,42 @@ class SistemaAdocao:
             return "Animal removido com sucesso."
         return "Animal nao encontrado."
     
-class Animal:
-    def __init__(self, id, nome, especie, sexo, idade, raca, disponibilidade):
-        self.id = id
-        self.nome = nome
-        self.especie = especie
-        self.sexo = sexo
-        self.idade = idade
-        self.raca = raca
-        self.disponibilidade = disponibilidade
+# class Animal:
+#     def __init__(self, id, nome, especie, sexo, idade, raca, disponibilidade):
+#         self.id = id
+#         self.nome = nome
+#         self.especie = especie
+#         self.sexo = sexo
+#         self.idade = idade
+#         self.raca = raca
+#         self.disponibilidade = disponibilidade
 
 
-class Adotante:
-    def __init__(self, nome, idade, rg, cpf, comprovante):
-        self.__nome = nome
-        self.__idade = idade
-        self.__rg = rg
-        self.__cpf = cpf
-        self.__comprovante = comprovante
+# class Adotante:
+#     def __init__(self, nome, idade, rg, cpf, comprovante):
+#         self.__nome = nome
+#         self.__idade = idade
+#         self.__rg = rg
+#         self.__cpf = cpf
+#         self.__comprovante = comprovante
 
-    @property
-    def mostrar_nome (self):
-        return self.__nome
+#     @property
+#     def mostrar_nome (self):
+#         return self.__nome
 
-    @property
-    def mostrar_idade (self):
-        return self.__idade
+#     @property
+#     def mostrar_idade (self):
+#         return self.__idade
     
-    @classmethod
-    def editar_adotante (cls, novo_id):
-        if novo_id in Adotante.cadastro_adotante:
-            print('Este é o mesmo ID utilizado. Tente outro.')
-            return
+#     @classmethod
+#     def editar_adotante (cls, novo_id):
+#         if novo_id in Adotante.cadastro_adotante:
+#             print('Este é o mesmo ID utilizado. Tente outro.')
+#             return
 
-        print('ID foi atualizado')
-        id_adotante = novo_id 
-        print(f'Esse é o novo ID {id_adotante}')
+#         print('ID foi atualizado')
+#         id_adotante = novo_id 
+#         print(f'Esse é o novo ID {id_adotante}')
 
     
 sistema = SistemaAdocao()
@@ -104,16 +104,16 @@ sistema.cadastrar_Animal(2, "Rex", "Cachorro", "Macho", "3 anos", "Vira-lata", "
 sistema.cadastrar_Animal(3, "Toby", "Gato", "Macho", "1 ano", "Siames", "Sim")
 sistema.cadastrar_Animal(4, "Charlie", "Gato", "Macho", "2 anos", "Persa", "Sim")
 
-print(sistema.listar_Animais())
+# print(sistema.listar_Animais())
 
-print(sistema.pesquisar_Animal(2))
+# print(sistema.pesquisar_Animal(2))
 
-print(sistema.listar_Animais())
+# print(sistema.listar_Animais())
 
-print(sistema.editar_Animal(2)) 
+# print(sistema.editar_Animal(2)) 
 
-print(sistema.listar_Animais())
+# print(sistema.listar_Animais()) 
 
-print(sistema.remover_Animal())
+# print(sistema.remover_Animal())
 
-print(sistema.listar_Animais())
+# print(sistema.listar_Animais())
