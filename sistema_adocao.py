@@ -115,14 +115,6 @@ sistema.cadastrar_Animal(4, "Charlie", "Gato", "Macho", "2 anos", "Persa", "Sim"
 
 # print(sistema.listar_Animais()) 
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-# print(sistema.remover_Animal())
-=======
 print(sistema.remover_Animal(2))
->>>>>>> Stashed changes
-=======
-print(sistema.remover_Animal(2))
->>>>>>> Stashed changes
 
 # print(sistema.listar_Animais())
