@@ -30,7 +30,7 @@ def menu():
             break 
 
         elif op == '3':
-            print(SistemaAdocao.listar_animais())
+            print(SistemaAdocao.listar_Animais())
             print('Listando animais...')
             break 
 
