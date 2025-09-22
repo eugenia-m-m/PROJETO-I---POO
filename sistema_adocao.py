@@ -54,12 +54,11 @@ class SistemaAdocao:
         return resultado
     
     @classmethod
-    def remover_Animal(cls, id_animal): 
-        animal = int(input("Digite o ID do animal que deseja remover: "))
-        for animais in cls.list_animais:
-            if animal == id_animal:
-                cls.list_animais.remove(animais)
-            return "Animal removido com sucesso."
+    def remover_Animal(cls, id_animal):
+        for animal in cls.list_animais:
+            if animal.id == id_animal:
+                cls.list_animais.remove(animal)
+                return "Animal removido com sucesso."
         return "Animal nao encontrado."
     
 class Animal:
@@ -116,6 +115,10 @@ sistema.cadastrar_Animal(4, "Charlie", "Gato", "Macho", "2 anos", "Persa", "Sim"
 
 # print(sistema.listar_Animais()) 
 
+<<<<<<< Updated upstream
 # print(sistema.remover_Animal())
+=======
+print(sistema.remover_Animal(2))
+>>>>>>> Stashed changes
 
 # print(sistema.listar_Animais())
