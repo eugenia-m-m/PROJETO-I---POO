@@ -20,12 +20,16 @@ def menu():
     """)
         op = input()
         if op == '1':
-            SistemaAdocao.cadastrar_Animal() # Precisa passar os parâmetros
+            animal_cadastro = input('Informe o ID, nome, espécie, sexo, idade, raça e se está disponível: ')
+            id, nome, especie, sexo, idade, raca, disponibilidade = animal_cadastro.split()
+            SistemaAdocao.cadastrar_Animal(id, nome, especie, sexo, idade, raca, disponibilidade ) # Precisa passar os parâmetros
             print('Cadastrando animal...')
             break 
     
         elif op == '2':
-            Adotante.cadastrar_adotante() # Precisa passar os parâmetros 
+            adotante_cadastrar = input('Informe o iD_Adotante, nome, RG, CPF, Comprovante, Endereço e idade: ')
+            id_adotante, nome, rg, cpf, comprovante, endereco, idade = adotante_cadastrar.split
+            Adotante.cadastrar_adotante(id_adotante, nome, rg, cpf, comprovante, endereco, idade) # Precisa passar os parâmetros 
             print('Cadastrando adotante...')
             break 
 
