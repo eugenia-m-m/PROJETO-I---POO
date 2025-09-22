@@ -1,3 +1,5 @@
+from animal import Animal
+
 class SistemaAdocao:
     list_animais = []
 
@@ -60,42 +62,42 @@ class SistemaAdocao:
             return "Animal removido com sucesso."
         return "Animal nao encontrado."
     
-# class Animal:
-#     def __init__(self, id, nome, especie, sexo, idade, raca, disponibilidade):
-#         self.id = id
-#         self.nome = nome
-#         self.especie = especie
-#         self.sexo = sexo
-#         self.idade = idade
-#         self.raca = raca
-#         self.disponibilidade = disponibilidade
+class Animal:
+    def __init__(self, id, nome, especie, sexo, idade, raca, disponibilidade):
+        self.id = id
+        self.nome = nome
+        self.especie = especie
+        self.sexo = sexo
+        self.idade = idade
+        self.raca = raca
+        self.disponibilidade = disponibilidade
 
 
-# class Adotante:
-#     def __init__(self, nome, idade, rg, cpf, comprovante):
-#         self.__nome = nome
-#         self.__idade = idade
-#         self.__rg = rg
-#         self.__cpf = cpf
-#         self.__comprovante = comprovante
+class Adotante:
+    def __init__(self, nome, idade, rg, cpf, comprovante):
+        self.__nome = nome
+        self.__idade = idade
+        self.__rg = rg
+        self.__cpf = cpf
+        self.__comprovante = comprovante
 
-#     @property
-#     def mostrar_nome (self):
-#         return self.__nome
+    @property
+    def mostrar_nome (self):
+        return self.__nome
 
-#     @property
-#     def mostrar_idade (self):
-#         return self.__idade
+    @property
+    def mostrar_idade (self):
+        return self.__idade
     
-#     @classmethod
-#     def editar_adotante (cls, novo_id):
-#         if novo_id in Adotante.cadastro_adotante:
-#             print('Este é o mesmo ID utilizado. Tente outro.')
-#             return
+    @classmethod
+    def editar_adotante (cls, novo_id):
+        if novo_id in Adotante.cadastro_adotante:
+            print('Este é o mesmo ID utilizado. Tente outro.')
+            return
 
-#         print('ID foi atualizado')
-#         id_adotante = novo_id 
-#         print(f'Esse é o novo ID {id_adotante}')
+        print('ID foi atualizado')
+        id_adotante = novo_id 
+        print(f'Esse é o novo ID {id_adotante}')
 
     
 sistema = SistemaAdocao()
