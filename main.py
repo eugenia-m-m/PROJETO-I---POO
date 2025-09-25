@@ -28,7 +28,7 @@ def menu():
     
         elif op == '2':
             adotante_cadastrar = input('Informe o iD_Adotante, nome, RG, CPF, Comprovante, Endereço e idade: ')
-            id_adotante, nome, rg, cpf, comprovante, endereco, idade = adotante_cadastrar.split
+            id_adotante, nome, rg, cpf, comprovante, endereco, idade = adotante_cadastrar.split()
             Adotante.cadastrar_adotante(id_adotante, nome, rg, cpf, comprovante, endereco, idade) # Precisa passar os parâmetros 
             print('Cadastrando adotante...')
             break 
